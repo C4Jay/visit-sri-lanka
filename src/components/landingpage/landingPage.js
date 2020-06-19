@@ -6,7 +6,8 @@ import axios from 'axios';
 class LandingPage extends Component {
 
     state={
-        trips: []
+        trips: [],
+        show: false
     }
 
     componentDidMount() {
@@ -72,8 +73,17 @@ class LandingPage extends Component {
 
     }
 
+    showbox () {
+        this.setState({
+            show : !this.state.show
+        })
+    }
+
 
     render () {
+
+       
+
         return (
             <div className={styles.main}>
             <h1>landing</h1>
@@ -94,12 +104,18 @@ class LandingPage extends Component {
                 {this.state.trips.map(trip => {
                     return <div className={styles.box}>
                     <div className={styles.inner}>
-                   
-                    <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg}></img>
-                  
+                   <div style={{flexDirection: 'row'}}>
+                    <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg1}></img>
+                    <Button>Get there</Button>
+                    <Button onClick={() => {this.showbox()}}>view photos</Button>
+                    </div>
                     <h2>{trip.triptrip}</h2>
                     <p>{trip.tripdescription}</p>
                     </div>
+                    {this.state.show ? <div><img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg}></img>
+                <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg3}></img>
+                <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg4}></img> 
+                </div>: null}
                     </div>
                 })}
             </div>
