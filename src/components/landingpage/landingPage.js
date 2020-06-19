@@ -2,15 +2,25 @@ import React, { Component } from 'react';
 import styles from './landingPage.module.css';
 import { Button } from '@material-ui/core';
 import axios from 'axios';
+import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+import env from '../../keys/env.js';
+
 
 class LandingPage extends Component {
+
+    googleMapRef = React.createRef()
 
     state={
         trips: [],
         show: false
     }
 
+   
+
     componentDidMount() {
+
+      
+
         axios.get('https://map-app-rn.firebaseio.com/Trips.json')
         .then((response) => {
        
@@ -71,6 +81,8 @@ class LandingPage extends Component {
             console.log(err)
         })
 
+       
+
     }
 
     showbox () {
@@ -79,10 +91,10 @@ class LandingPage extends Component {
         })
     }
 
+  
 
     render () {
 
-       
 
         return (
             <div className={styles.main}>
@@ -102,26 +114,60 @@ class LandingPage extends Component {
             </div>
             <div>
                 {this.state.trips.map(trip => {
-                    return <div className={styles.box}>
+                    return <div className={styles.whole}><div className={styles.box}>
                     <div className={styles.inner}>
-                   <div style={{flexDirection: 'row'}}>
+                    <h2>{trip.triptrip}</h2>
+                    
+                   <div style={{flexDirection: 'row', display: 'inline-block'}}>
                     <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg1}></img>
                     <Button>Get there</Button>
                     <Button onClick={() => {this.showbox()}}>view photos</Button>
                     </div>
-                    <h2>{trip.triptrip}</h2>
-                    <p>{trip.tripdescription}</p>
+                    {/* <h2>{trip.triptrip}</h2> */}
+                    <p style={{display: 'inline-block'}}>{trip.tripdescription}</p>
+                    
+                    <div  className={styles.googlebox1} >
+                    <Map
+          google={this.props.google}
+          zoom={9}
+          style={{height:400, width: 400 ,borderRadius: 10}}
+          initialCenter={{ lat: trip.triplat, lng: trip.triplng}}
+        >
+        <Marker position={{ lat: trip.triplat, lng: trip.triplng}} />
+        </Map> 
+        </div>
+                  
                     </div>
+                   
+        </div>
+
+
+
                     {this.state.show ? <div><img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg}></img>
                 <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg3}></img>
                 <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg4}></img> 
                 </div>: null}
+              
+                {/* <div  className={styles.googlebox} >
+                    <Map
+          google={this.props.google}
+          zoom={9}
+          style={{height: 500, width: 500 ,borderRadius: 10}}
+          initialCenter={{ lat: trip.triplat, lng: trip.triplng}}
+        >
+        <Marker position={{ lat: trip.triplat, lng: trip.triplng}} />
+        </Map> 
+        </div> */}
                     </div>
                 })}
             </div>
+
+           
             </div>
         )
     }
 }
 
-export default LandingPage;
+export default GoogleApiWrapper({
+    apiKey: env.googleapiKeyworking
+  })(LandingPage);
