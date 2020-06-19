@@ -31,7 +31,7 @@ body {
     margin-left: 20%;
     margin-top: 100px;
     /* align-content: center; */
-    width: 30%;
+    width: 50%;
     background: white;
     border-radius: 10px;
     /* left: 50% */
@@ -61,4 +61,12 @@ body {
 
 .box:hover, .inner {
     clip-path: circle(75%)
+}
+
+img {
+    display: block;
+  max-width:400px;
+  max-height:400px;
+  width: auto;
+  height: auto;
 }

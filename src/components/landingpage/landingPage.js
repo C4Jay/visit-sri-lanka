@@ -94,6 +94,9 @@ class LandingPage extends Component {
                 {this.state.trips.map(trip => {
                     return <div className={styles.box}>
                     <div className={styles.inner}>
+                   
+                    <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg}></img>
+                  
                     <h2>{trip.triptrip}</h2>
                     <p>{trip.tripdescription}</p>
                     </div>
