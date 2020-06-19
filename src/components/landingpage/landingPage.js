@@ -85,9 +85,9 @@ class LandingPage extends Component {
 
     }
 
-    showbox () {
+    showbox (id) {
         this.setState({
-            show : !this.state.show
+            show : id
         })
     }
 
@@ -121,7 +121,7 @@ class LandingPage extends Component {
                    <div style={{flexDirection: 'row', display: 'inline-block'}}>
                     <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg1}></img>
                     <Button>Get there</Button>
-                    <Button onClick={() => {this.showbox()}}>view photos</Button>
+                    <Button onClick={() => {this.showbox(trip.tripid)}}>view photos</Button>
                     </div>
                     {/* <h2>{trip.triptrip}</h2> */}
                     <p style={{display: 'inline-block'}}>{trip.tripdescription}</p>
@@ -143,7 +143,7 @@ class LandingPage extends Component {
 
 
 
-                    {this.state.show ? <div style={{marginTop: 100}}><img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg}></img>
+                    {this.state.show == trip.tripid ? <div style={{marginTop: 100}}><img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg}></img>
                 <img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg3}></img>
                 {/* <img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg1}></img>  */}
                 </div>: null}
