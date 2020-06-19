@@ -143,9 +143,9 @@ class LandingPage extends Component {
 
 
 
-                    {this.state.show ? <div><img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg}></img>
-                <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg3}></img>
-                <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg4}></img> 
+                    {this.state.show ? <div><img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg}></img>
+                <img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg3}></img>
+                <img style={{maxHeight: '20%', maxWidth: '30%', padding:10}} src={trip.tripimg1}></img> 
                 </div>: null}
               
                 {/* <div  className={styles.googlebox} >
