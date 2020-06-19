@@ -81,6 +81,8 @@ img {
   max-height:100%;
   width: auto;
   height: auto;
+  animation: slide 1s;
+  /* clip-path: circle(50% at 0% 0%); */
 }
 
 .mapStyles {
@@ -114,3 +116,9 @@ img {
     height: 400px;
     width: 400px;
 }
+
+
+@keyframes slide {
+    0% {clip-path: circle(50% at 0% 0%)}
+    100% {clip-path: circle(100%);}
+    }

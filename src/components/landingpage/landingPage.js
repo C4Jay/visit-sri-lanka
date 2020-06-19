@@ -98,19 +98,19 @@ class LandingPage extends Component {
 
         return (
             <div className={styles.main}>
-            <h1>landing</h1>
+            <h1>Sri Lanka</h1>
             <div style={{flex: 1, flexDirection: 'column'}}>
-            <div style={{marginBottom: -8, borderRadius: 10}}>   
+            {/* <div style={{marginBottom: -8, borderRadius: 10}}>    */}
             <Button className={styles.btn} /* style={{backgroundColor: 'rgba(255,255,255,0.5)', marginBottom: 4}} */>Explore all</Button>
-            </div>
-            <br/>
-            <div style={{marginBottom: -8, borderRadius: 10}}> 
+            {/* </div> */}
+            {/* <br/> */}
+            {/* <div style={{marginBottom: -8, borderRadius: 10}}>  */}
             <Button className={styles.btn}>Explore by region</Button>
-            </div>
-            <br/>
-            <div style={{marginBottom: -8, borderRadius: 10}}> 
+            {/* </div> */}
+            {/* <br/> */}
+            {/* <div style={{marginBottom: -8, borderRadius: 10}}>  */}
             <Button className={styles.btn}>Favorites</Button>
-            </div>
+            {/* </div> */}
             </div>
             <div>
                 {this.state.trips.map(trip => {
