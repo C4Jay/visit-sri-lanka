@@ -1,0 +1,64 @@
+/* .main {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    justify-items: center;
+    align-items: center;
+}
+ */
+body {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    justify-items: center;
+    align-items: center;
+}
+
+.btn {
+   
+    position: absolute;
+    /* bottom: 0; */
+    left: 0;
+    background-color: rgba(236, 241, 241, 0.527) !important;
+    margin-bottom: 6px;
+    border-radius: 10px
+}
+
+.btn:hover {
+    background-color: rgba(0, 187, 212, 1) !important;
+    
+}
+
+.box {
+    margin-left: 20%;
+    margin-top: 100px;
+    /* align-content: center; */
+    width: 30%;
+    background: white;
+    border-radius: 10px;
+    /* left: 50% */
+
+}
+
+.box, .inner {
+    background: #00B6FF;
+    padding: 1em;
+    border-radius: 10px;
+    clip-path: circle(50% at 0% 0%);
+    transition: clip-path .5s ease-in-out;
+
+    
+}
+
+.inner  h2 {
+    color: white;
+    margin: 0;
+}
+
+.inner p {
+    color: white;
+    font-size: .8rem;
+}
+
+
+.box:hover, .inner {
+    clip-path: circle(75%)
+}
