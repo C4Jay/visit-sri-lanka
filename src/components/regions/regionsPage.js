@@ -127,7 +127,7 @@ class RegionsPage extends Component {
                 <div className={styles.inner}>
                 <img src={matale}>
                 </img>
-                <Button onClick={() => {this.find()}}>find</Button>
+                <h4>Matale</h4>
                 <Button onClick={() => {this.show('Matale')}}>+</Button>
                 {this.state.district == 'Matale' ?
                 <div>
@@ -144,13 +144,13 @@ class RegionsPage extends Component {
                 <div className={styles.inner}>
                 <img src={badulla}>
                 </img>
-                <Button onClick={() => {this.districtHandler()}}>BADULLA</Button>
+               <h4>Badulla</h4>
                 <Button onClick={() => {this.show('Badulla')}}>+</Button>
 
                 {this.state.district == 'Badulla' ?
                 <div>
                     {this.state.trips.map(site => {
-                        return <h4>{site.triptrip}</h4>
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
                     })}
                 </div> : null }
                 
@@ -164,13 +164,13 @@ class RegionsPage extends Component {
                 <div className={styles.inner}>
                 <img src={galle}>
                 </img>
-                <Button onClick={() => {this.districtHandler('Galle')}}>GALLE</Button>
+                <h4>Galle</h4>
                 <Button onClick={() => {this.show('Galle')}}>+</Button>
 
                 {this.state.district == 'Galle' ?
                 <div>
                     {this.state.trips.map(site => {
-                        return <h4>{site.triptrip}</h4>
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
                     })}
                 </div> : null }
                 
@@ -184,13 +184,13 @@ class RegionsPage extends Component {
                 <div className={styles.inner}>
                 <img src={ratnapura}>
                 </img>
-                <Button onClick={() => {this.navHandler(/* 'Matale' */)}}>RATNAPURA</Button>
+                <h4>Ratnapura</h4>
                 <Button onClick={() => {this.show('Ratnapura')}}>+</Button>
 
                 {this.state.district == 'Ratnapura' ?
                 <div>
                     {this.state.trips.map(site => {
-                        return <h4>{site.triptrip}</h4>
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
                     })}
                 </div> : null }
                 

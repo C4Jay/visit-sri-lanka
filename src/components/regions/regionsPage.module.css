@@ -22,4 +22,5 @@ img {
 .box1 {
     background: rgb(7, 218, 165);
     padding: 10px;
+    border-radius: 10px;
 }
