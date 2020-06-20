@@ -85,6 +85,10 @@ img {
   /* clip-path: circle(50% at 0% 0%); */
 }
 
+h2{
+    padding: 5px;
+}
+
 .mapStyles {
     width: '100%';
     height: '100%';
@@ -120,5 +124,11 @@ img {
 
 @keyframes slide {
     0% {clip-path: circle(50% at 0% 0%)}
-    100% {clip-path: circle(100%);}
+    50% {clip-path: circle(75%)}
+    100% {clip-path: circle(100%)}
     }
+
+a {
+    text-decoration: none;
+    color: white
+}

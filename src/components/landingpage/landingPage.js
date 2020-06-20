@@ -4,6 +4,8 @@ import { Button } from '@material-ui/core';
 import axios from 'axios';
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import env from '../../keys/env.js';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import RegionsPage from '../regions/regionsPage';
 
 
 class LandingPage extends Component {
@@ -19,7 +21,8 @@ class LandingPage extends Component {
 
     componentDidMount() {
 
-      
+        
+    // console.log(this.props.location.state.district)
 
         axios.get('https://map-app-rn.firebaseio.com/Trips.json')
         .then((response) => {
@@ -98,20 +101,12 @@ class LandingPage extends Component {
 
         return (
             <div className={styles.main}>
-            <h1>Sri Lanka</h1>
-            <div style={{flex: 1, flexDirection: 'column'}}>
-            {/* <div style={{marginBottom: -8, borderRadius: 10}}>    */}
-            <Button className={styles.btn} /* style={{backgroundColor: 'rgba(255,255,255,0.5)', marginBottom: 4}} */>Explore all</Button>
-            {/* </div> */}
-            {/* <br/> */}
-            {/* <div style={{marginBottom: -8, borderRadius: 10}}>  */}
-            <Button className={styles.btn}>Explore by region</Button>
-            {/* </div> */}
-            {/* <br/> */}
-            {/* <div style={{marginBottom: -8, borderRadius: 10}}>  */}
-            <Button className={styles.btn}>Favorites</Button>
-            {/* </div> */}
-            </div>
+            {/* <h1>Sri Lanka</h1>
+            <div style={{display: 'inline-block'}}>
+            <h4>Explore all</h4>
+            <Link to="/regions"><h4>Explore by regions</h4></Link>
+            <h4>Favorites</h4>
+            </div> */}
             <div>
                 {this.state.trips.map(trip => {
                     return <div className={styles.whole}><div className={styles.box}>
@@ -162,8 +157,10 @@ class LandingPage extends Component {
                 })}
             </div>
 
-           
+            
             </div>
+
+            
         )
     }
 }
