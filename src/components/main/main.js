@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core';
 class Main extends Component {
 
     state = {
-        show : 'landing'
+        show : 'regions'
     }
 
     toggler (id) {

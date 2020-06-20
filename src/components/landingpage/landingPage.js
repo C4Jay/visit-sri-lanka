@@ -115,7 +115,7 @@ class LandingPage extends Component {
                     
                    <div style={{flexDirection: 'row', display: 'inline-block'}}>
                     <img style={{/* height: 380, width: 500, */ padding:10}} src={trip.tripimg1}></img>
-                    <Button>Get there</Button>
+                    <Button>+ FAVORITES</Button>
                     <Button onClick={() => {this.showbox(trip.tripid)}}>view photos</Button>
                     </div>
                     {/* <h2>{trip.triptrip}</h2> */}
@@ -126,6 +126,7 @@ class LandingPage extends Component {
           google={this.props.google}
           zoom={9}
           style={{height:400, width: 400 ,borderRadius: 10}}
+        // className={styles.googleboxinner}
           initialCenter={{ lat: trip.triplat, lng: trip.triplng}}
         >
         <Marker position={{ lat: trip.triplat, lng: trip.triplng}} />

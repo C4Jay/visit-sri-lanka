@@ -41,6 +41,19 @@ body {
 
 }
 
+@media only screen and (max-width: 450px) {
+    .box {
+        width: 50%;
+        margin-left: 5%;
+    }
+    .googlebox1 {
+        height: 400px;
+        width: 289px;
+    }
+
+   
+}
+
 .box, .inner {
     background: rgb(7, 218, 165);
     padding: 1em;
