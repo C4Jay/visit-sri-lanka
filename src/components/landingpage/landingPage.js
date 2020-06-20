@@ -138,7 +138,7 @@ class LandingPage extends Component {
                     <Map
           google={this.props.google}
           zoom={9}
-          style={{height:200, width: 200 ,borderRadius: 10}}
+          style={{height:400, width: 250 }}
         // className={styles.googleboxinner}
           initialCenter={{ lat: trip.triplat, lng: trip.triplng}}
         >

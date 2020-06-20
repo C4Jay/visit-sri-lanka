@@ -52,11 +52,12 @@ body {
         width: 289px; */
     }
 
-    .googleboxmobile {
+    /* .googleboxmobile {
         height: 400px;
         width: 200px;
+        display: inline;
     }
-
+ */
    
 }
 
@@ -152,7 +153,14 @@ a {
     color: white
 }
 
+.googleboxmobile {
+    height: 400px;
+    width: 250px;
+}
 
+@media only screen and (min-width: 400px) {
 .googleboxmobile {
     display: none
+}
+
 }
