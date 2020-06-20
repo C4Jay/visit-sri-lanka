@@ -19,7 +19,7 @@
     content: "";
     height: 100%;
     width: 100%;
-    background-color: rgba(44, 49, 49, 0.377);
+    background-color: rgba(34, 36, 36, 0.377);
     position: absolute;
     top: 0%;
     left: 0%;
@@ -29,5 +29,10 @@
     color: white;
     position: absolute;
     top: 40%;
-    left: 22%
+    left: 22%;
+    z-index: 4;
+}
+
+a {
+    text-decoration: none
 }
