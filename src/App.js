@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Link, Switch} from 'react-router-dom';
 import RegionsPage from './components/regions/regionsPage';
 import ImgPage from './components/about/about';
 import Main from './components/main/main';
+import Test from './components/responsive/responsive';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Link exact path = "/" component={Main}></Link>
         <Link path="/regions" component={RegionsPage} ></Link>
         <Link path="/img" component={ImgPage} ></Link>
+        <Link path="/responsive" component={Test} ></Link>
         </Switch>
         </div>
 

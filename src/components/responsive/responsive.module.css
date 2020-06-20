@@ -1,0 +1,33 @@
+.mainmobile{
+    height: 100%
+}
+
+.holdmobile {
+    height: 820px;
+    /* object-fit: cover; */
+    position: relative;
+}
+
+.holdmobile img {
+    height: 820px;
+    width: 400px;
+    border-radius: 0px;
+    object-fit: cover
+}
+
+.holdmobile::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(44, 49, 49, 0.377);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.titlemobile {
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 22%
+}
