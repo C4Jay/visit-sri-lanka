@@ -132,6 +132,19 @@ class LandingPage extends Component {
         <Marker position={{ lat: trip.triplat, lng: trip.triplng}} />
         </Map> 
         </div>
+
+
+        <div  className={styles.googleboxmobile} >
+                    <Map
+          google={this.props.google}
+          zoom={9}
+          style={{height:200, width: 200 ,borderRadius: 10}}
+        // className={styles.googleboxinner}
+          initialCenter={{ lat: trip.triplat, lng: trip.triplng}}
+        >
+        <Marker position={{ lat: trip.triplat, lng: trip.triplng}} />
+        </Map> 
+        </div>
                   
                     </div>
                    
