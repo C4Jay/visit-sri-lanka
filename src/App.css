@@ -47,3 +47,7 @@ body {
 button {
   font-family: 'Montserrat', sans-serif;
 }
+
+button:hover {
+  background: blue
+}
