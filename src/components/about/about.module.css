@@ -1,0 +1,50 @@
+.mainhold {
+    /* height: 800vh; */
+    /* text-align: center */
+}
+
+.hold {
+    height: 40%;
+    width: 100%;
+    position: relative;
+}
+
+.hold img {
+    height: 40%;
+    width: 100%;
+    border-radius: 0px;
+    object-fit: contain
+}
+
+.title {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    /* transform: translate(-20%, -70%) */
+    /* justify-content: center; */
+}
+
+.title h1 {
+    color: white;
+    z-index: 4;
+    font-size: 100px;
+    animation: colors 15s infinite;
+}
+
+.hold::after{
+    content: "";
+    background-color: rgba(63, 77, 77, 0.459);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes colors {
+    /* 0% {color: rgb(236, 35, 9)} */
+    25% {color: rgb(111, 188, 233)}
+    50% {color: rgb(247, 247, 140)}
+    75% {color: rgb(155, 228, 113)}
+    /* 90% {color: black} */
+}
