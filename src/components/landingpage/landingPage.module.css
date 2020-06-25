@@ -65,7 +65,7 @@ body {
     background: rgb(7, 218, 165);
     padding: 1em;
     border-radius: 10px;
-    clip-path: circle(50% at 0% 0%);
+    clip-path: circle(60% at 0% 0%);
     transition: clip-path .5s ease-in-out;
 
     

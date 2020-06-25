@@ -5,9 +5,17 @@ import matale from '../../assets/imgs/photo-1580889240912-c39ecefd3d95.jpg';
 import badulla from '../../assets/imgs/photo-1519576325797-91124298a877.jpg';
 import galle from '../../assets/imgs/photo-1567498573339-688686a4b5df.jpg';
 import ratnapura from '../../assets/imgs/photo-1580398470644-6a59beb40593.jpg';
-import axios from 'axios';
+import matara from '../../assets/imgs/photo-1522310193626-604c5ef8be43.jpg';
+import batticaloa from '../../assets/imgs/photo-1552055568-f8c4fb8c6320.jpg';
+import polonnaruwa from '../../assets/imgs/photo-1580889242438-b286d3a752a1.jpg';
+import kegalle from '../../assets/imgs/photo-1533484482814-3fe2d922be89.jpg';
 
-import { Button } from '@material-ui/core';
+import axios from 'axios';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+
+import GetAppIcon from '@material-ui/icons/GetApp';
+import PublishIcon from '@material-ui/icons/Publish';
+import { Button, IconButton } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 class RegionsPage extends Component {
@@ -41,6 +49,12 @@ class RegionsPage extends Component {
 
         console.log(this.state.district)
 
+    }
+
+    shownot() {
+        this.setState({
+            district: ''
+        })
     }
 
     show (district) {
@@ -128,7 +142,11 @@ class RegionsPage extends Component {
                 <img src={matale}>
                 </img>
                 <h4>Matale</h4>
-                <Button onClick={() => {this.show('Matale')}}>+</Button>
+                {/* <Button onClick={() => {this.show('Matale')}}>+</Button> */}
+                {this.state.district == 'Matale' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Matale')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
                 {this.state.district == 'Matale' ?
                 <div>
                     {this.state.trips.map(site => {
@@ -145,7 +163,10 @@ class RegionsPage extends Component {
                 <img src={badulla}>
                 </img>
                <h4>Badulla</h4>
-                <Button onClick={() => {this.show('Badulla')}}>+</Button>
+               {this.state.district == 'Badulla' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Badulla')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
 
                 {this.state.district == 'Badulla' ?
                 <div>
@@ -165,7 +186,10 @@ class RegionsPage extends Component {
                 <img src={galle}>
                 </img>
                 <h4>Galle</h4>
-                <Button onClick={() => {this.show('Galle')}}>+</Button>
+                {this.state.district == 'Galle' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Galle')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
 
                 {this.state.district == 'Galle' ?
                 <div>
@@ -185,7 +209,10 @@ class RegionsPage extends Component {
                 <img src={ratnapura}>
                 </img>
                 <h4>Ratnapura</h4>
-                <Button onClick={() => {this.show('Ratnapura')}}>+</Button>
+                {this.state.district == 'Ratnapura' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Ratnapura')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
 
                 {this.state.district == 'Ratnapura' ?
                 <div>
@@ -197,6 +224,100 @@ class RegionsPage extends Component {
                 </div>
                 </div>
                 </Grid>
+
+
+                <Grid item sm={6} xs={12}>
+                <div className={styles.box}>
+                <div className={styles.inner}>
+                <img src={matara}>
+                </img>
+                <h4>Matara</h4>
+                {this.state.district == 'Matara' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Matara')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
+
+                {this.state.district == 'Matara' ?
+                <div>
+                    {this.state.trips.map(site => {
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
+                    })}
+                </div> : null }
+                
+                </div>
+                </div>
+                </Grid>
+
+                <Grid item sm={6} xs={12}>
+                <div className={styles.box}>
+                <div className={styles.inner}>
+                <img src={batticaloa}>
+                </img>
+                <h4>Batticaloa</h4>
+                {this.state.district == 'Batticaloa' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Batticaloa')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
+
+                {this.state.district == 'Batticaloa' ?
+                <div>
+                    {this.state.trips.map(site => {
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
+                    })}
+                </div> : null }
+                
+                </div>
+                </div>
+                </Grid>
+
+
+                <Grid item sm={6} xs={12}>
+                <div className={styles.box}>
+                <div className={styles.inner}>
+                <img src={polonnaruwa}>
+                </img>
+                <h4>Polonnaruwa</h4>
+                {this.state.district == 'Polonnaruwa' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Polonnaruwa')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
+
+                {this.state.district == 'Polonnaruwa' ?
+                <div>
+                    {this.state.trips.map(site => {
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
+                    })}
+                </div> : null }
+                
+                </div>
+                </div>
+                </Grid>
+
+
+
+                <Grid item sm={6} xs={12}>
+                <div className={styles.box}>
+                <div className={styles.inner}>
+                <img src={kegalle}>
+                </img>
+                <h4>Kegalle</h4>
+                {this.state.district == 'Kegalle' ? 
+                <IconButton color="secondary" onClick={() => {this.shownot()}} aria-label="show">
+  <PublishIcon/> </IconButton> : <IconButton color="secondary" onClick={() => {this.show('Kegalle')}} aria-label="show">
+  <GetAppIcon/></IconButton> }
+
+                {this.state.district == 'Kegalle' ?
+                <div>
+                    {this.state.trips.map(site => {
+                        return <div className={styles.box1}><div className={styles.inner1}><img className={styles.imgs} src={site.tripimg}></img><h4>{site.triptrip}</h4><p>{site.tripdescription}</p></div></div>
+                    })}
+                </div> : null }
+                
+                </div>
+                </div>
+                </Grid>
+
+
                 </Grid>
             </div>
 
