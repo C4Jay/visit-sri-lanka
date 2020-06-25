@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styles from './landingPage.module.css';
-import { Button } from '@material-ui/core';
+import { Button, OutlinedInput, InputAdornment, IconButton } from '@material-ui/core';
 import axios from 'axios';
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import env from '../../keys/env.js';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import RegionsPage from '../regions/regionsPage';
-
+import SearchIcon from '@material-ui/icons/Search';
 
 class LandingPage extends Component {
 
@@ -14,7 +14,8 @@ class LandingPage extends Component {
 
     state={
         trips: [],
-        show: false
+        show: false,
+        find: ''
     }
 
    
@@ -94,6 +95,16 @@ class LandingPage extends Component {
         })
     }
 
+    handleChange(event) {
+        this.setState({
+            find: event.target.value
+        })
+    }
+
+    find () {
+        console.log(this.state.find)
+    }
+
   
 
     render () {
@@ -107,9 +118,32 @@ class LandingPage extends Component {
             <Link to="/regions"><h4>Explore by regions</h4></Link>
             <h4>Favorites</h4>
             </div> */}
+
+<OutlinedInput
+style={{height: 40}}
+defaultValue="find"
+            id="outlined-adornment-password"
+            // type={values.showPassword ? 'text' : 'password'}
+            value={this.state.find}
+            onChange={this.handleChange.bind(this)}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={this.find()}
+                //   onMouseDown={this.find()}
+                  edge="end"
+                >
+                 <SearchIcon></SearchIcon> 
+                </IconButton>
+              </InputAdornment>
+            }
+            labelWidth={70}
+          />
             <div>
                 {this.state.trips.map(trip => {
-                    return <div className={styles.whole}><div className={styles.box}>
+                    return <div className={styles.whole}>
+                    {this.state.find == trip.triptrip || this.state.find == '' ? <div className={styles.box}>
                     <div className={styles.inner}>
                     <h2>{trip.triptrip}</h2>
                     
@@ -149,6 +183,7 @@ class LandingPage extends Component {
                     </div>
                    
         </div>
+        : null }
 
 
 
