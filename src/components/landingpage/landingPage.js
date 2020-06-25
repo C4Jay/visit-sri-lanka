@@ -143,7 +143,7 @@ defaultValue="find"
             <div>
                 {this.state.trips.map(trip => {
                     return <div className={styles.whole}>
-                    {this.state.find == trip.triptrip || this.state.find == '' ? <div className={styles.box}>
+                    {this.state.find.toLowerCase().substring(0,4) == trip.triptrip.toLowerCase().substring(0,4) || this.state.find == '' ? <div className={styles.box}>
                     <div className={styles.inner}>
                     <h2>{trip.triptrip}</h2>
                     
