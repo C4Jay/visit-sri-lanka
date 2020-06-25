@@ -15,9 +15,9 @@ function App() {
         <div>
       <Switch>
         {/* <Link exact path="/" component={LandingPage} ></Link>       */}
-        <Link exact path = "/" component={Main}></Link>
+        <Link exact path = "/" component={ImgPage}></Link>
         <Link path="/regions" component={RegionsPage} ></Link>
-        <Link path="/img" component={ImgPage} ></Link>
+        <Link path="/img" component={Main} ></Link>
         <Link path="/responsive" component={Test} ></Link>
         </Switch>
         </div>
